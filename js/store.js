@@ -1,6 +1,6 @@
 // One place for all data. Screens read `state` and call the functions below;
 // where the data is kept (this device or the database) is the adapter's job.
-import { SUPABASE_URL, SUPABASE_ANON_KEY } from './config.js?v=202611231346';
+import { SUPABASE_URL, SUPABASE_ANON_KEY } from './config.js?v=202611231403';
 
 export const state = {
   ready: false,
@@ -10,7 +10,7 @@ export const state = {
   transactions: [],   // { id, date 'YYYY-MM-DD', amount (cents), kind, categoryId, note, createdAt }
   vault: { salary: 0, goal: 0, starting: 0 }, // cents: monthly salary, monthly saving goal, savings held before using the app
   vaultEntries: [],   // { id, date, amount (cents, negative = taken out), note, createdAt }
-  subscriptions: [],  // { id, name, amount (cents), cycle 'monthly'|'yearly', day 1-31, month 1-12, categoryId, handled 'YYYY-MM', createdAt }
+  subscriptions: [],  // { id, name, amount (cents), cycle 'monthly'|'yearly', day 1-31, month 1-12, categoryId, handled 'YYYY-MM', type 'home'|'life', createdAt }
 };
 
 export const TONES = ['butter', 'pink', 'sage', 'sky', 'lavender', 'peach'];
@@ -40,12 +40,12 @@ export const newId = () => crypto.randomUUID();
 export async function init() {
   if (SUPABASE_URL && SUPABASE_ANON_KEY) {
     state.mode = 'cloud';
-    const { create } = await import('./adapters/supabase.js?v=202611231346');
+    const { create } = await import('./adapters/supabase.js?v=202611231403');
     adapter = await create(SUPABASE_URL, SUPABASE_ANON_KEY);
     state.user = await adapter.user();
     if (!state.user) { state.ready = true; emit(); return; }
   } else {
-    const { create } = await import('./adapters/local.js?v=202611231346');
+    const { create } = await import('./adapters/local.js?v=202611231403');
     adapter = create();
   }
   await reload();

@@ -1,7 +1,7 @@
-import { state, monthSummary, categoryById, sum } from '../store.js?v=202611231346';
-import { icon } from '../icons.js?v=202611231346';
-import { homeTile as vaultTile } from './vault.js?v=202611231346';
-import { esc, money, moneyShort, todayISO, monthOf, iso, shortDate, monthLabel } from '../ui.js?v=202611231346';
+import { state, monthSummary, categoryById, sum } from '../store.js?v=202611231403';
+import { icon } from '../icons.js?v=202611231403';
+import { homeTile as vaultTile } from './vault.js?v=202611231403';
+import { esc, money, moneyShort, todayISO, monthOf, iso, shortDate, monthLabel } from '../ui.js?v=202611231403';
 
 function greeting() {
   const h = new Date().getHours();

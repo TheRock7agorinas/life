@@ -105,6 +105,7 @@ a { color: inherit; }
 .page-head-row { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 12px; }
 
 .section-title { font: 400 26px/1.1 var(--display); }
+.section-title small { font-family: var(--font); font-size: 14px; font-weight: 600; color: var(--ink-2); margin-left: 6px; white-space: nowrap; }
 .section-row { display: flex; align-items: center; justify-content: space-between; gap: 12px; margin-bottom: 12px; }
 h2.section-title + .bento { margin-top: -12px; }
 

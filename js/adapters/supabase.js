@@ -9,8 +9,8 @@ const rowToTxn = (r) => ({ id: r.id, date: r.date, amount: r.amount_cents, kind:
 const entryToRow = (e) => ({ id: e.id, date: e.date, amount_cents: e.amount, note: e.note, created_at: e.createdAt });
 const rowToEntry = (r) => ({ id: r.id, date: r.date, amount: r.amount_cents, note: r.note || '', createdAt: r.created_at });
 
-const subToRow = (s) => ({ id: s.id, name: s.name, amount_cents: s.amount, cycle: s.cycle, day: s.day, month: s.month, category_id: s.categoryId, handled_month: s.handled || '', created_at: s.createdAt });
-const rowToSub = (r) => ({ id: r.id, name: r.name, amount: r.amount_cents, cycle: r.cycle, day: r.day, month: r.month, categoryId: r.category_id, handled: r.handled_month || '', createdAt: r.created_at });
+const subToRow = (s) => ({ id: s.id, name: s.name, amount_cents: s.amount, cycle: s.cycle, day: s.day, month: s.month, category_id: s.categoryId, handled_month: s.handled || '', type: s.type || 'life', created_at: s.createdAt });
+const rowToSub = (r) => ({ id: r.id, name: r.name, amount: r.amount_cents, cycle: r.cycle, day: r.day, month: r.month, categoryId: r.category_id, handled: r.handled_month || '', type: r.type || 'life', createdAt: r.created_at });
 
 export async function create(url, key) {
   const sb = createClient(url, key);

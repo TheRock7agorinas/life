@@ -1,12 +1,12 @@
-import { state, init, subscribe, signIn, signOut } from './store.js?v=202611231346';
-import { icon } from './icons.js?v=202611231346';
-import { closeSheet, toast, todayISO } from './ui.js?v=202611231346';
-import * as home from './views/home.js?v=202611231346';
-import * as budget from './views/budget.js?v=202611231346';
-import * as settings from './views/settings.js?v=202611231346';
-import { openTransactionSheet, openCategorySheet } from './views/sheets.js?v=202611231346';
-import { openVaultEntrySheet, openVaultSettingsSheet } from './views/vault.js?v=202611231346';
-import * as subscriptions from './views/subscriptions.js?v=202611231346';
+import { state, init, subscribe, signIn, signOut } from './store.js?v=202611231403';
+import { icon } from './icons.js?v=202611231403';
+import { closeSheet, toast, todayISO } from './ui.js?v=202611231403';
+import * as home from './views/home.js?v=202611231403';
+import * as budget from './views/budget.js?v=202611231403';
+import * as settings from './views/settings.js?v=202611231403';
+import { openTransactionSheet, openCategorySheet } from './views/sheets.js?v=202611231403';
+import { openVaultEntrySheet, openVaultSettingsSheet } from './views/vault.js?v=202611231403';
+import * as subscriptions from './views/subscriptions.js?v=202611231403';
 
 const routes = {
   home: { title: 'Home', view: home },
@@ -72,7 +72,7 @@ const actions = {
   'go-month': (el) => { budget.setMonth(el.dataset.month); render(); window.scrollTo({ top: 0, behavior: matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth' }); },
   'month-prev': () => { budget.shift(-1); render(); },
   'month-next': () => { budget.shift(1); render(); },
-  'sub-add': () => subscriptions.openSubscriptionSheet(),
+  'sub-add': (el) => subscriptions.openSubscriptionSheet(null, el.dataset.type),
   'sub-edit': (el) => subscriptions.openSubscriptionSheet(el.dataset.id),
   'sub-log': (el) => subscriptions.logPayment(el.dataset.id),
   'sub-skip': (el) => subscriptions.skipPayment(el.dataset.id),

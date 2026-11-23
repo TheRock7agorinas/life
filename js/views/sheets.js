@@ -1,7 +1,7 @@
 // The add / edit sheets for transactions and categories.
-import { state, TONES, newId, categoriesOf, categoryById, saveTransaction, removeTransaction, saveCategory, removeCategory } from '../store.js?v=202611231346';
-import { icon } from '../icons.js?v=202611231346';
-import { esc, parseAmount, amountInput, todayISO, openSheet, closeSheet, toast, saveFailed } from '../ui.js?v=202611231346';
+import { state, TONES, newId, categoriesOf, categoryById, saveTransaction, removeTransaction, saveCategory, removeCategory } from '../store.js?v=202611231403';
+import { icon } from '../icons.js?v=202611231403';
+import { esc, parseAmount, amountInput, todayISO, openSheet, closeSheet, toast, saveFailed } from '../ui.js?v=202611231403';
 
 const ICONS = ['shopping-basket', 'utensils', 'zap', 'house', 'bus', 'plane', 'heart-pulse', 'dumbbell', 'gamepad-2', 'shopping-bag', 'gift', 'sparkles', 'receipt', 'piggy-bank', 'banknote', 'coins', 'ellipsis'];
 

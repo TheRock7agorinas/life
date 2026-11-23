@@ -113,3 +113,8 @@ create policy "own subscriptions" on public.subscriptions
 
 grant select, insert, update, delete on public.subscriptions to authenticated;
 revoke all on public.subscriptions from anon;
+
+-- Subscription type (added 2026-11-23): 'home' for household bills (rent,
+-- electricity, water, phone), 'life' for personal subscriptions (streaming, cloud).
+alter table public.subscriptions
+  add column if not exists type text not null default 'life' check (type in ('home', 'life'));
